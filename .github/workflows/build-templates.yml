@@ -39,9 +39,8 @@ jobs:
               with:
                   CLEAN: true
                   # ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-                  # GITHUB_TOKEN: ${{secrets.DEPLOY_ERICKMARCIA}}
+                  GITHUB_TOKEN: ${{secrets.DEPLOY_ERICKMARCIA}}
                   BRANCH: gh-pages
                   FOLDER: __sapper__/export
                   # FOLDER: "site" # The deployment folder should match the name of the artifact. Even though our project builds into the 'build' folder the artifact name of 'site' must be placed here.
-                  # REPOSITORY_NAME: erickmarcia/erickmarcia.github.io
-
+                  REPOSITORY_NAME: erickmarcia/erickmarcia.github.io
