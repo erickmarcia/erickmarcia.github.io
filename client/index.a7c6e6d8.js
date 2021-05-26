@@ -1,0 +1,1 @@
+import{S as t,i as s,s as e,n as i}from"./client.e749d2d6.js";function l(t){return{c(){this.h()},l(t){this.h()},h(){document.title="Sapper Blog Template"},m:i,p:i,i:i,o:i,d:i}}export default class extends t{constructor(t){super(),s(this,t,null,l,e,[])}}
