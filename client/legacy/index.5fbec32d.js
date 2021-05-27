@@ -1,1 +1,0 @@
-import{_ as t,a as n,b as a,c as i,i as s,s as o,d as r,S as u,n as c}from"./client.27288f37.js";function e(t){return{c:function(){this.h()},l:function(t){this.h()},h:function(){document.title="Sapper Blog Template"},m:c,p:c,i:c,o:c,d:c}}var l=function(c){function l(t){var u;return n(this,l),u=a(this,i(l).call(this)),s(r(u),t,null,e,o,[]),u}return t(l,u),l}();export default l;
