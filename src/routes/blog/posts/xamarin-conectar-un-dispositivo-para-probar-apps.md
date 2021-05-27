@@ -3,13 +3,14 @@ author: "Erick Marcia"
 slug: "xamarin-conectar-un-dispositivo-para-probar-apps"
 title: "Xamarin - Conectar un Dispositivo para probar Apps!"
 layout: post
+timestamp: "2019-02-09T07:08:02.000-07:00"
 date: "2019-12-18T07:08:02.000-07:00"
 primary_tag: "Xamarin"
 secondary_tag: "Apps"
 brief: "En este artículo vamos a conocer como poder conectar nuestro dispositivo
   movil, para probar como emulador de nuestras Apps"
 keywords: "formik,español,react,cómo,validar formularios react,binaria,blog"
-feature_image: "media/blog/Xamarin/Debug/How-to-Debug-Xamarin-Application-on-Visual-Studio-660x420.png"
+image: "media/blog/Xamarin/How-to-Debug-Xamarin-Application-on-Visual-Studio-660x420.png"
 ---
 
 <!-- ![Post Xamarin](media\blog\Xamarin\Debug\How-to-Debug-Xamarin-Application-on-Visual-Studio-660x420.png) -->
@@ -31,7 +32,7 @@ ver como se miran nuestras apps en el dispositivo, aunque tengamos un emulador,
 nosotros queremos quitarnos las ganas de ver nuestra app en el dispositivo, asi
 que vamos a darle..
 
-# Conectar tu Celular para probar Apps
+## Conectar tu Celular para probar Apps
 
 Bueno para iniciar cuando ya tenemos nuestro proyecto cargado, en la parte
 superior donde se encuentran las opciones de debug popdras ver que solo
@@ -77,7 +78,7 @@ instalado.
 
 ![Activar depuración USB](media\blog\Xamarin\Debug\dev-6.png)
 
-# Conclución
+## Conclusiones
 
 Como puede ver, no es demasiado complicado pero que si resulta un dolor de
 cabeza cuando estas iniciando, espero les ayude y compartan para que más
@@ -87,7 +88,7 @@ Buenos eso ha sido todo ppara este post, nos vemos en el siguiente.
 
 ![Xamarin](media\blog\Xamarin\Debug\xamarin-visualStudio.png)
 
-# Agradecimimento
+## Agradecimimento
 
 Un Agradecimiento especial a los organizadores del primer **#AdvientoXamarin**
 en español en especial a **@Luis Beltran** por alentarnos a publicar lo poco que

@@ -1,6 +1,7 @@
 <script>
   const today = new Date(`2021-05-25T20:39:17.000-07:00`);
   export const experienceYears = today.getFullYear() - 2014;
+  export const experienceYear = today.getFullYear() - 2008;
 </script>
 
 <style>
@@ -37,17 +38,28 @@
 <article class="text-justify">
   <!-- <div class="container"> -->
   <h1>Erick Marcia</h1>
-  <h2>Diseñador & Desarrollador de Sofware</h2>
+  <h2>Diseñador & Desarrollador de Software</h2>
   <figure>
     <img src='/media/about-me/profile.png' alt='Erick Marcia'>
     <!-- <figcaption>Erick Marcia <a href="" target="_blank">Erick Marcia</a>
     </figcaption> -->
   </figure>
-  <p>En el 2009 llegue a la universidad pensando en ser un diseñador gráfico, pero al momento de conocer el
-    desarrollo de software un nuevo amor habia nacido.</p>
-  <p>Desdes el 2014 que me adrente en el mundo profesional de desarrollo de software acumulando a la fecha ya
-    {experienceYears} años de
-    expericia y constante aprendizaje.</p>
+  <p>Deseaba entrar a la Universidad pensando en ser un diseñador gráfico ya que se me facilitaba el dibujo y la
+    pintura, desde pequeño aprendi de mi padre que es pintor y de mi madre el emprendimiento, y de ambos queria formar
+    mi empresa de diseño, pero en el 2008 logre entrar en la universidad por casos de la vida entre en la carrera de
+    Ingenieria de Sistemas y Computación, fue en ese momento que conoci al computador y todo el mundo que escondia,
+    anteriormente los habia visto pero nunca trabaje con uno, fue con esas primeras experiencias que decidi cambiar el
+    rumbo de mi carrera y al
+    avanzar me enamore del desarrollo de software, aun cuando muchos en el salón de clase me decian que nunca iba a
+    vivir de eso,
+    puedo decir que hasta el dia de hoy me ha dado de comer.</p>
+  <p>Desde el 2008 comence a trabajar para pagar mis
+    estudios acumulando en este tiempo {experienceYear} años de experiencia en diferentes areas y jiros de negocios,
+    siempre me he compromedito con mi trabajo y apoyado con mis conocimientos para el desarrrollo y productividad de las
+    empresas que en su momento me brindaron una oportunidad, pero desdes el 2014 que me adrente en el mundo profesional
+    del desarrollo de software acumulando a la
+    fecha ya {experienceYears} años de expericia y constante aprendizaje
+  </p>
   <p>Este hermoso mundo me ha llevado a conocer la frustración cuando el proyecto no compila y a brincar de alegria
     cuando luego de varias horas por fin logre vencer a ese gigante que me atormentaba llamado bug
     <img src="/media/bug.svg" height="24" alt="bug">, me ha llevado a

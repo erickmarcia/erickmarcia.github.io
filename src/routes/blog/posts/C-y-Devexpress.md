@@ -11,7 +11,7 @@ es por ello que en este artículo estaremos abordando el tema de **Fluent Design
 Form and Acrylic effects** una de las nuevas capacidades diseñadas para replicar
 la metáfora de la próxima generación de IU de Microsoft'
 keywords: 'formik,español,Devexpress,cómo,crear formularios devexpress,C# y DevExpress,blog'
-feature_image: 'media/blog/Devexpress/Acordeon/banner.png'
+image: 'media/blog/Devexpress/Acordeon/banner.png'
 ---
 
 <!-- ![Acordeon](media/blog/Devexpress/Acordeon/banner.png) -->
@@ -34,7 +34,7 @@ es por ello que en este artículo estaremos abordando el tema de **Fluent Design
 Form and Acrylic effects** una de las nuevas capacidades diseñadas para replicar
 la metáfora de la próxima generación de IU de Microsoft
 
-# WinForms - Forma de diseño fluido y efectos (WinForms Fluent Design and Acrylic Effects)
+## WinForms - Forma de diseño fluido y efectos (WinForms Fluent Design and Acrylic Effects)
 
 La idea de elementos de ventana parcialmente transparentes se remonta al efecto
 Aero en Windows 7. En las últimas versiones de Windows 10, Microsoft está
@@ -48,35 +48,35 @@ Como consecuencia de la iniciativa Fluent Design de Microsoft , muchos
 desarrolladores de aplicaciones modernas como la de la imagen hacen tres
 elecciones importantes para sus implementaciones de UI:
 
--   Implementan un diseño adaptable, por lo que las ventanas de la aplicación se
-    ven bien en diferentes tamaños de pantalla
--   Muestran una barra de navegación que utiliza Acrílico y el efecto Revelar
-    resaltado
--   Utilizan un menú de hamburguesas, que desempeña un papel importante para los
-    escenarios de diseño adapta
+- Implementan un diseño adaptable, por lo que las ventanas de la aplicación se
+  ven bien en diferentes tamaños de pantalla
+- Muestran una barra de navegación que utiliza Acrílico y el efecto Revelar
+  resaltado
+- Utilizan un menú de hamburguesas, que desempeña un papel importante para los
+  escenarios de diseño adapta
 
-# Diseño fluido para WinForms
+## Diseño fluido para WinForms
 
 Para crear aplicaciones similares para Windows Forms, primero creamos un nuevo
 control de formulario llamado FluentDesignForm. Como reemplazo del estándar
 Form, esto es similar XtraForm, RibbonFormy, TabbedForm, pero también es muy
 diferente porque combina varios elementos conectados:
 
--   Un control de acordeón para la navegación, con un nuevo estilo de menú de
-    hamburguesa aplicado.
+- Un control de acordeón para la navegación, con un nuevo estilo de menú de
+  hamburguesa aplicado.
 
 ![Menu Hamburguesa](media/blog/Devexpress/Acordeon/Menu.png)
 
--   Fluent Design Form Control toma el control del área de encabezado del
-    formulario y le permite agregar botones, editores y etiquetas en su
-    superficie.
+- Fluent Design Form Control toma el control del área de encabezado del
+  formulario y le permite agregar botones, editores y etiquetas en su
+  superficie.
 
 ![Diseño fluido](media/blog/Devexpress/Acordeon/elements.png)
 
--   El contenedor de formularios de diseño fluido contiene el contenido del
-    formulario.
+- El contenedor de formularios de diseño fluido contiene el contenido del
+  formulario.
 
-# Transparencia parcial
+## Transparencia parcial
 
 Establézcalo FluentDesignForm.EnableAcrylicAccenten true para habilitar el
 efecto Acrílico para el Control de Acordeón. Al mismo tiempo, el efecto Revelar
@@ -91,7 +91,7 @@ con el puntero del mouse.
 > utiliza automáticamente la representación de DirectX para pintar estos
 > efectos, si es posible.
 
-# Diseño adaptativo
+## Diseño adaptativo
 
 Como mencioné anteriormente, el diseño adaptativo es el componente final
 importante de Fluent Design, y nuestro nuevo Formulario implementa esto
@@ -101,7 +101,7 @@ DisplayModedependiendo del ancho.
 
 ![Diseño adaptativo](media/blog/Devexpress/Acordeon/resize.gif)
 
-# Integración de acordeón
+## Integración de acordeón
 
 El Control de Acordeón puede integrarse con la Forma de Diseño Fluido en dos
 modos: un modo "tradicional" donde el encabezado del formulario es el elemento
@@ -114,7 +114,7 @@ parte superior del Formulario.
 > máscaras planas modernas, por lo que actualmente requiere The Bezier o una de
 > las máscaras DevExpress de Office 2016.
 
-# Conclución
+## Conclusiones
 
 C# es un lenguaje muy excepcional con muchísimas funcionalidades y desde mi
 propia experiencia Devexpress lo complementa si deseas una ofrecer una expericia
@@ -128,7 +128,7 @@ Y tú, ¿Considerarías usarlos en tu próxima aplicación?
 
 ![Acordeon](media/blog/Devexpress/Acordeon/images.jpg)
 
-# Agradecimimento
+## Agradecimimento
 
 Un Agradecimiento especial a los organizadores del primer **#advientocsharp** en
 español, por darme la oportunidad de ser parte de esta evento ya que es mi

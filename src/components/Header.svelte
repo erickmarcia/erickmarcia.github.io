@@ -7,7 +7,6 @@
 </script>
 
 <header>
-
   <div class="header">
     <div class="nav">
       <Nav {segment} />
@@ -51,35 +50,12 @@
     font-size: 48px;
   }
 
-  /* 
-  h3 {
-    text-align: start;
-  } */
-
-  .h3 {
-    width: 50px;
-    fill: white;
-    padding-right: 15px;
-    display: inline-block;
-    vertical-align: middle;
-  }
-
-
-  /* .logo {
-    width: 50px;
-    fill: white;
-    padding-right: 15px;
-    display: inline-block;
-    vertical-align: middle;
-  } */
-
   p {
     font-family: 'Lato', sans-serif;
     letter-spacing: 1px;
     font-size: 14px;
     color: #333333;
   }
-
 
   .header {
     position: relative;
@@ -171,5 +147,6 @@
     h1 {
       font-size: 24px;
     }
+
   }
 </style>

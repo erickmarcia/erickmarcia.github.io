@@ -1,5 +1,5 @@
 <script>
-  import Redes from '../RedesSociales.svelte'
+  import Redes from '../Shared/RedesSociales.svelte'
 </script>
 
 <section class="home_banner_area" wfd-id="242">
@@ -11,7 +11,7 @@
             <h3>¡Hola!</h3>
             <h1>Soy Erick Marcia</h1>
             <h5>Diseñador &amp; Desarrollador de
-              Sofware</h5>
+              Software</h5>
             <Redes />
             <!-- <a class="primary_btn" href=""><span wfd-id="250" _msthash="2875613" _msttexthash="204555">Ver mi
                 trabajo</span></a> -->

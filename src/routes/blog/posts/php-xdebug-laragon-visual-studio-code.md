@@ -1,19 +1,19 @@
 ---
-author: 'Erick Marcia'
-slug: 'php-xdebug-laragon-visual-studio-code'
-title: 'Php + XDebug + Laragon + Visual Studio Code!'
+author: "Erick Marcia"
+slug: "php-xdebug-laragon-visual-studio-code"
+title: "Php + XDebug + Laragon + Visual Studio Code!"
 layout: post
-timestamp: '2019-01-03T07:08:02.000-07:00'
-date: '2019-01-03T07:08:02.000-07:00'
-primary_tag: 'Php'
-secondary_tag: 'Debug'
+timestamp: "2019-01-03T07:08:02.000-07:00"
+date: "2019-01-03T07:08:02.000-07:00"
+primary_tag: "Php"
+secondary_tag: "Debug"
 brief:
-    'Como programador una de las opciones que menos nos gusta pero que realmente
-    es necesario es el debug, mas en los casos cuando el desarrollo falla y no
-    tienes ni la minima idea de como resolverlo, veamos en este post como
-    configurar el modo degug para Php'
-keywords: 'formik,español,Php,cómo,configurar,Php,Debug,PhpDebug,blog'
-feature_image: 'media/blog/Php/xdebug/bannerPhpXdebug.png'
+  "Como programador una de las opciones que menos nos gusta pero que realmente
+  es necesario es el debug, mas en los casos cuando el desarrollo falla y no
+  tienes ni la minima idea de como resolverlo, veamos en este post como
+  configurar el modo degug para Php"
+keywords: "formik,español,Php,cómo,configurar,Php,Debug,PhpDebug,blog"
+image: "media/blog/Php/xdebug/bannerPhpXdebug.png"
 ---
 
 <!-- ![Banner](media/blog/Php/xdebug/bannerPhpXdebug.png) -->
@@ -28,15 +28,15 @@ cuales son los fundamentos de la depuración en Php, más bien como preparar el
 entorno para poder realizar la depuraciones de nuestro código por que realmente
 puede hacernos la vida más fácil.
 
-# Xdebug
+## Xdebug
 
 [Xdebug](https://xdebug.org/) es una extensión de PHP que apunta a ayudar en el
 proceso de depuración de sus aplicaciones. Xdebug ofrece características como:
 
--   Seguimiento automático de la pila en caso de error
--   Función de registro de llamadas
--   Mostrar características como la salida var_dump () mejorada y la información
-    de cobertura de código.
+- Seguimiento automático de la pila en caso de error
+- Función de registro de llamadas
+- Mostrar características como la salida var_dump () mejorada y la información
+  de cobertura de código.
 
 Xdebug es altamente configurable y adaptable a una variedad de situaciones. Por
 ejemplo, los seguimientos de la pila (que son extremadamente útiles para
@@ -53,7 +53,7 @@ Puedes echar un vistazo link
 [a la guía de instalación de Xdebug](https://xdebug.org/docs/install) que se
 ofrece en la página oficial.
 
-# Instalación Xdebug
+## Instalación Xdebug
 
 Para ello, necesitaremos descargar la versión de Xdebug, adecuada a nuestra
 versión de PHP. Hay que tener en cuenta que necesitaremos tener PHP 7.0 o
@@ -68,15 +68,15 @@ PHPInfo.
 
 ![XdebugPhpinfo](media/blog/Php/xdebug/1-localhostxdebug.png)
 
-# Cómo agregar Xdebug a Laragon
+## Cómo agregar Xdebug a Laragon
 
 Si tienes problemas en cargar esta pantalla puedes realizar los siguientes
 pasos:
 
--   En la barra de tareas de windows dale click al icono de Laragon.
--   Selecciona PHP
--   En el menú desplegable selecciona Quick Setting.
--   Selecciona xdebug.
+- En la barra de tareas de windows dale click al icono de Laragon.
+- Selecciona PHP
+- En el menú desplegable selecciona Quick Setting.
+- Selecciona xdebug.
 
 ![LaragonXdebug](media/blog/Php/xdebug/1-xdebug.png)
 
@@ -90,7 +90,7 @@ Nota: al aceptar la advertencia nos redireccionará al siguiente
 en el cual nos muestra el método para agregar Xdebug a Laragon usando phpinfo()
 y asistente de Xdebug.
 
-# Usando de phpinfo () y asistente de Xdebug
+## Usando de phpinfo () y asistente de Xdebug
 
 ![LaragonXdebug3](media/blog/Php/xdebug/3-xdebug.png)
 
@@ -165,17 +165,17 @@ php.ini:
    muestra en la siguiente imagen (otra forma de comprobarlo es buscar el texto
    xdebug en esta página).
 
-    ![LaragonXdebug11](media/blog/Php/xdebug/11-xdebug.png)
+   ![LaragonXdebug11](media/blog/Php/xdebug/11-xdebug.png)
 
 ---
 
-# Configurando Visual Studio Code para depurar código PHP
+## Configurando Visual Studio Code para depurar código PHP
 
 Una vez que hemos realizado la instalación de Xdebug ya podemos comenzar a
 depurar nuestros código php con Visual Studio Code. Para ello debemos
 asegurarnos de tener instalado en este editor la extensión de “PHP Debug”.
 
-# Instalación de PhpDebug
+## Instalación de PhpDebug
 
 Las extensiones las buscaremos usando el icono de **Extensiones** del menú de la
 izquierda con forma cuadrada pulsando en la caja de texto **Php Debug** y la
@@ -187,7 +187,7 @@ instalaremos.
 > azul Recargar. Y si nos aparece, también pulsaremos el botón con el mensaje
 > **“Volver a cargar Window”**.
 
-# Configuración de PhpDebug en Visual Studio Code
+## Configuración de PhpDebug en Visual Studio Code
 
 1.  En este momento, es cuando abriremos nuestro proyecto (Archivo > Abrir
     Carpeta).
@@ -244,6 +244,6 @@ algún punto de interrupción y darle a la flecha verde. Si por error borramos e
 carpeta, tendremos que volver a repetir los pasos para volver a añadir la
 configuración.
 
-# Conclusión
+## Conclusiones
 
 ¡Listos para depurar código PHP!

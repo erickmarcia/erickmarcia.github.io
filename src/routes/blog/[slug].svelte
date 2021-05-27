@@ -14,78 +14,252 @@
 </script>
 
 <script>
+  import { stores } from '@sapper/app';
+  import { onDestroy, onMount } from 'svelte';
+  import Sidebar from '../../components/Nav/Sidebar.svelte';
+  import SocialToolbox from '../../components/Shared/SocialToolbox.svelte';
   import Bio from '../../components/Bio.svelte'
-  export let post
+  import { sendEventGA } from '../../utils/analytics';
+  import disqus from '../../utils/disqus';
+  import highlightCode from '../../utils/highlightCode';
+  import toggleImage from '../../utils/openImage';
+  import { formatPostContent } from '../../utils/postHelper';
+  import readingTime from '../../utils/readingTime';
+  import { CalendarIcon, BookOpenIcon } from 'svelte-feather-icons'
+  import { timeFormatter } from '../../utils/dateHelper';
+
+
+  export let post;
+
+  let allHeadingContents = []
+  let allHeadingTexts = []
+  let isStickySidebar = false
+  let isSocialToolBoxFloating = false
+  let postContentElement
+  let observer
+  let disqusElement
+  let windowWidth
+  const unSubscribePageChanges = stores().page.subscribe(({ params }) => {
+    if (postContentElement) {
+      allHeadingTexts = Array.from(postContentElement.querySelectorAll('h2')).map(element => ({
+        innerText: element.innerText,
+        element: element,
+        isActive: false
+      }))
+      if (observer) {
+        observer.disconnect()
+
+        windowWidth > 992 && formatContentAndWatchElements(true)
+      }
+      disqus.refresh()
+      highlightCode()
+    }
+  })
+  const onResizeWindow = () => windowWidth > 992 && formatContentAndWatchElements()
+  const onObserveElements = entries => {
+    entries.forEach(entry => {
+      const currentElementIndex = allHeadingTexts.findIndex(heading => heading.element.id === entry.target.attributes['data-ref'].value)
+      if (entry.intersectionRatio > 0) {
+        allHeadingTexts[currentElementIndex].isActive = true
+      } else {
+        allHeadingTexts[currentElementIndex].isActive = false
+      }
+    })
+    allHeadingTexts = [...allHeadingTexts]
+  }
+  const formatContentAndWatchElements = (format) => {
+    if (format || !document.querySelector('.heading-content')) formatPostContent(postContentElement)
+
+    observer = new IntersectionObserver(onObserveElements)
+    allHeadingContents = Array.from(document.querySelectorAll('.heading-content'))
+    allHeadingContents.forEach(element => observer.observe(element, { threshold: 1.0 }))
+    checkScrollPosition()
+  }
+  const init = () => {
+    highlightCode()
+    disqus.init()
+    allHeadingTexts = Array.from(postContentElement.querySelectorAll('h2')).map(element => ({
+      innerText: element.innerText,
+      element: element,
+      isActive: false
+    }))
+    if (windowWidth > 992) {
+      formatContentAndWatchElements(true)
+    }
+  }
+  const checkScrollPosition = () => {
+    const navBar = document.querySelector('nav.Nav')
+    isStickySidebar = window.pageYOffset > navBar.offsetTop
+    isSocialToolBoxFloating = isStickySidebar && (disqusElement.offsetTop - disqusElement.offsetHeight) > window.pageYOffset
+  }
+  const onTemaryClick = item => {
+    const { element } = allHeadingTexts.find(element => element.innerText === item)
+    element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    sendEventGA('post', 'temary', 'item-click')
+  }
+  const postContentClick = event => {
+    if (event.srcElement.tagName === 'IMG') {
+      toggleImage(event.srcElement)
+    } else if (event.srcElement.querySelector('img.opened')) {
+      toggleImage(event.srcElement.querySelector('img.opened'))
+    }
+
+  }
+  onMount(() => {
+    document.readyState === 'complete' ? init() :
+      document.addEventListener('readystatechange', async () => document.readyState === 'complete' && init())
+  })
+  onDestroy(unSubscribePageChanges)
 </script>
 
 <style>
-  header {
-    text-align: center;
+  .Post-container {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: minmax(200px, 2fr) 1fr;
   }
 
-  header h1 {
-    margin-bottom: 0.7em;
+  .Post {
+    background-color: white;
+    border-left: 1px solid #e6e6e6;
+    border-right: 1px solid #e6e6e6;
   }
 
-  header p {
-    color: #AAA;
-    text-transform: uppercase;
-    font-family: Rubik, sans-serif;
-    font-weight: 600;
+  .Post-image {
+    width: 100%;
+    height: 400px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    top: 0;
+    left: 0;
   }
 
-  header hr {
-    min-width: 100px;
-    width: 30%;
+  .Post-title {
+    position: absolute;
+    width: 100%;
+    background-color: rgba(0, 0, 0, .75);
+    padding: 10px;
+    color: white;
+    box-sizing: border-box;
+    bottom: 0;
+  }
+
+  .Post-title p time,
+  .Post-title p span,
+  .Post-title span {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .Post-title h2 {
+    margin: 0
+  }
+
+  .Post-title p {
+    margin: 0
+  }
+
+  .Post-content {
+    padding: 10px;
+    transition: all ease .5s;
+  }
+
+  .Post-comments {
+    margin: 2em 0 0 0 0;
+    padding: 10px;
+  }
+
+  .Social-media-container {
+    background-color: white;
+    display: flex;
+    width: fit-content;
+    padding: 0;
+    border-radius: 10px;
+    -webkit-box-shadow: 0 8px 30px rgba(0, 0, 0, .12);
+    -moz-box-shadow: 0 8px 30px rgba(0, 0, 0, .12);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, .12);
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: scale(0) translateX(-120%) translateY(100px);
+    transition: all ease .25s;
+    opacity: 0;
+  }
+
+  .Social-media-container:hover {
+    -webkit-box-shadow: 0 8px 30px rgba(0, 0, 0, .2);
+    -moz-box-shadow: 0 8px 30px rgba(0, 0, 0, .2);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, .2);
+  }
+
+  .Social-media-container.isFloating {
+    opacity: 1;
+    height: auto;
+    width: auto;
+    transform: scale(1) translateX(-50%) translateY(0);
+  }
+
+  @media screen and (max-width: 992px) {
+    .Post-container {
+      grid-template-columns: minmax(200px, 2fr);
+    }
   }
 </style>
 
 <svelte:head>
-  <title>{post.title}</title>
-  <!--  Include canonical links to your blog -->
-  <!--   <link rel="canonical" href="" /> -->
+  <title> {post.meta_title || post.title}</title>
 
-  <!-- Validate your twitter card with https://cards-dev.twitter.com/validator  -->
-  <!-- Update content properties with your URL   -->
-  <!-- 	<meta property="og:url" content=""} /> -->
-  <meta property="og:type" content="article" />
-  <meta property="og:title" content={post.title} />
-  <meta name="Description" content={post.excerpt} />
-  <meta property="og:description" content={post.excerpt} />
-
-  <!--  Link to your preferred image  -->
-  <!-- 	<meta property="og:image" content="" /> -->
+  <meta name="description" content="{post.meta_description || post.excerpt}">
+  <link rel="canonical" href="https://erickmarcia.github.io/blog/{post.slug}">
 
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@Emarcia14" />
+  <meta name="twitter:creator" content="@Emarcia14" />
+  <meta name="twitter:title" content="{post.meta_title || post.title}" />
+  <meta name="twitter:description" content="{post.meta_description || post.excerpt}" />
+  <meta name="twitter:image" content="https://erickmarcia.github.io/{post.image}" />
 
-  <!--  Link to your Domain  -->
-  <!-- 	<meta name="twitter:domain" value="" /> -->
-
-  <!--  Link to your Twitter Account  -->
-  <!-- 	<meta name="twitter:creator" value="" /> -->
-
-  <meta name="twitter:title" value={post.title} />
-  <meta name="twitter:description" content={post.excerpt} />
-
-  <!--  Link to your preferred image to be displayed on Twitter (832x520px) -->
-  <!-- 	<meta name="twitter:image" content="" /> -->
-
-  <meta name="twitter:label1" value="Published on" />
-  <meta name="twitter:data1" value={new Date(post.printDate).toLocaleDateString(undefined, { year: 'numeric' ,
-    month: 'short' , day: 'numeric' })} />
-  <meta name="twitter:label2" value="Reading Time" />
-  <meta name="twitter:data2" value={post.printReadingTime} />
+  <meta property="og:title" content="{post.meta_title || post.title}" />
+  <meta property="og:site_name" content="erickmarcia.github.io" />
+  <meta property="og:description" content="{post.meta_description || post.excerpt}" />
+  <meta property="og:image" content="https://erickmarcia.github.io/{post.image}" />
+  <meta property="og:url" content="https://erickmarcia.github.io/blog/{post.slug}" />
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:type" content="article">
 </svelte:head>
 
-<header>
-  <p>{post.printDate} ~ {post.printReadingTime}</p>
-  <h1>{post.title}</h1>
-  <hr />
-</header>
-<div class="container">
-  <article class="content">
-    {@html post.html}
-  </article>
-  <hr />
-  <Bio />
+<svelte:window bind:innerWidth={windowWidth} on:scroll={checkScrollPosition} on:resize={onResizeWindow} />
+
+<div class="Post-container">
+  <div class="Post">
+    <div class="Post-image" style="background-image: url({post.image})">
+      <div class="Post-title">
+        <h1>{post.title}</h1>
+        <p>
+          <time datetime={post.date}>
+            <CalendarIcon size="20" />
+            &nbsp;&nbsp;{timeFormatter(post.date)}&nbsp;&nbsp;
+          </time>
+          <span>
+            <BookOpenIcon size="20" />
+            &nbsp;&nbsp;{readingTime(post.html)}
+          </span>
+        </p>
+      </div>
+    </div>
+    <div class="Post-content" bind:this={postContentElement} on:click={postContentClick}>
+      {@html post.html}
+    </div>
+    <div class="Social-media-container" class:isFloating={isSocialToolBoxFloating}>
+      <SocialToolbox commentsElement={disqusElement} buttonText="Compartir" text={post.meta_title || post.title}
+        postUrl="https://erickmarcia.github.io/blog/{post.slug}" twitterUsername="@Emarcia14" />
+    </div>
+    <div class="Post-comments">
+      <div id="disqus_thread" bind:this={disqusElement} />
+    </div>
+  </div>
+  <Sidebar currentPost={post} temary={allHeadingTexts} {onTemaryClick} {isStickySidebar} showTemary={windowWidth> 992}>
+  </Sidebar>
 </div>
