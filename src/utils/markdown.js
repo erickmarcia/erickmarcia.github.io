@@ -11,15 +11,15 @@ require('prismjs/components/prism-jsx.min');
 const EXCERPT_SEPARATOR = '<!-- more -->';
 const renderer = new marked.Renderer();
 const linkRenderer = renderer.link;
-renderer.link = (href, title, text) => {
-  const html = linkRenderer.call(renderer, href, title, text);
+renderer.link = (href, title,feature_image, text) => {
+  const html = linkRenderer.call(renderer, href, title, feature_image, text);
 
   if (href.indexOf('/') === 0) {
     // Do not open internal links on new tab
     return html;
   } else if (href.indexOf('#') === 0) {
     // Handle hash links to internal elements
-    const html = linkRenderer.call(renderer, 'javascript:;', title, text);
+    const html = linkRenderer.call(renderer, 'javascript:;', title, feature_image, text);
     return html.replace(
       /^<a /,
       `<a onclick="document.location.hash='${href.substr(1)}';" `
@@ -43,7 +43,7 @@ export default () => ({
 
     const fileName = path.basename(id);
     const { data, content: rawContent } = matter(md);
-    const { title, date } = data;
+    const { title, feature_image, date } = data;
     const slug = fileName.split('.')[0];
     let content = rawContent;
     let excerpt = '';
@@ -58,12 +58,14 @@ export default () => ({
     const readingStats = readingTime(content);
     const printReadingTime = readingStats.text;
     const printDate = formatDate(new Date(date), 'MMMM D, YYYY');
+  
 
     const exportFromModule = JSON.stringify({
       title: title || slug,
       slug,
       html,
       date,
+      feature_image,
       excerpt,
       printDate,
       printReadingTime,

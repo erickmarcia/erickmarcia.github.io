@@ -13,7 +13,7 @@ brief:
   tienes ni la minima idea de como resolverlo, veamos en este post como
   configurar el modo degug para Php"
 keywords: "formik,español,Php,cómo,configurar,Php,Debug,PhpDebug,blog"
-image: "media/blog/Php/xdebug/bannerPhpXdebug.png"
+feature_image: "media/blog/Php/xdebug/bannerPhpXdebug.png"
 ---
 
 <!-- ![Banner](media/blog/Php/xdebug/bannerPhpXdebug.png) -->

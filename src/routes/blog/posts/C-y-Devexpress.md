@@ -11,7 +11,7 @@ es por ello que en este artículo estaremos abordando el tema de **Fluent Design
 Form and Acrylic effects** una de las nuevas capacidades diseñadas para replicar
 la metáfora de la próxima generación de IU de Microsoft'
 keywords: 'formik,español,Devexpress,cómo,crear formularios devexpress,C# y DevExpress,blog'
-image: 'media/blog/Devexpress/Acordeon/banner.png'
+feature_image: 'media/blog/Devexpress/Acordeon/banner.png'
 ---
 
 <!-- ![Acordeon](media/blog/Devexpress/Acordeon/banner.png) -->

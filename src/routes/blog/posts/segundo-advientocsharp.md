@@ -9,7 +9,7 @@ secondary_tag: "General"
 brief: "Descubre como poner una marca de agua o parcialmente transparente en tus
   Cuadros de texto de Winforms."
 keywords: "aviento,c#,español,cómo,marcadeagua,TextEdit,blog"
-image: "media/blog/CSharp/csharp.png"
+feature_image: "media/blog/CSharp/csharp.png"
 ---
 
 <!-- ![Acordeon](media/blog/CSharp/cshar.png) -->

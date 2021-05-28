@@ -6,7 +6,9 @@
     const data = await res.json();
 
     if (res.status === 200) {
-      return { post: data };
+      return {
+        post: data
+      };
     } else {
       this.error(res.status, data.message);
     }
@@ -39,6 +41,7 @@
   let observer
   let disqusElement
   let windowWidth
+
   const unSubscribePageChanges = stores().page.subscribe(({ params }) => {
     if (postContentElement) {
       allHeadingTexts = Array.from(postContentElement.querySelectorAll('h2')).map(element => ({
@@ -97,6 +100,7 @@
     element.scrollIntoView({ behavior: 'smooth', block: 'start' })
     sendEventGA('post', 'temary', 'item-click')
   }
+
   const postContentClick = event => {
     if (event.srcElement.tagName === 'IMG') {
       toggleImage(event.srcElement)
@@ -105,10 +109,13 @@
     }
 
   }
+
   onMount(() => {
     document.readyState === 'complete' ? init() :
       document.addEventListener('readystatechange', async () => document.readyState === 'complete' && init())
   })
+
+
   onDestroy(unSubscribePageChanges)
 </script>
 
@@ -234,9 +241,14 @@
 
 <div class="Post-container">
   <div class="Post">
-    <div class="Post-image" style="background-image: url({post.image})">
+    <!-- <div class="Post-image" style="background-image: url({post.image})"> -->
+    <div class="Post-image" style="background-image: url({post.feature_image})">
+      <!-- <div class="Post-image">
+      <img src="{post.image}" alt="post">
+      </div> -->
       <div class="Post-title">
-        <h1>{post.title}</h1>
+        <!-- <h1>{post.title}</h1> -->
+        <h2>{post.title}</h2>
         <p>
           <time datetime={post.date}>
             <CalendarIcon size="20" />
@@ -250,7 +262,13 @@
       </div>
     </div>
     <div class="Post-content" bind:this={postContentElement} on:click={postContentClick}>
-      {@html post.html}
+      <!-- {@html post.html} -->
+      <!-- <div class="container"> -->
+      <article class="content">
+        {@html post.html}
+      </article>
+      <Bio />
+      <!-- </div> -->
     </div>
     <div class="Social-media-container" class:isFloating={isSocialToolBoxFloating}>
       <SocialToolbox commentsElement={disqusElement} buttonText="Compartir" text={post.meta_title || post.title}

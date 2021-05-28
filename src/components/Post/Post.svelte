@@ -89,7 +89,7 @@
 
 <Card onClick="{navigateTo}">
   <div class="Post-content">
-    <div class="Post-image" style="background-image: url({post.image})">
+    <div class="Post-image" style="background-image: url({post.feature_image})">
     </div>
     <div class="Post-head">
       <div class="Post-title">

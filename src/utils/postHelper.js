@@ -1,5 +1,6 @@
 export const formatPostContent = content => {
-	const allHeadingElements = Array.from(content.querySelectorAll('h2'))
+       const allHeadingElements = Array.from(content.querySelectorAll('h2'))
+  	// const allHeadingElements = Array.from(content.querySelectorAll('h1'))
 
     allHeadingElements.forEach((element, index) => {
         if (allHeadingElements.length > index) {

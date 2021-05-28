@@ -9,7 +9,8 @@ primary_tag: "Laragon"
 secondary_tag: "MySQL"
 brief: "Descubre como solucionar el “ERROR #1115: Unknown character set: utf8mb4”"
 keywords: "formik,español,react,cómo,error 1115,binaria,blog"
-image: "media/blog/Laragon/error-1115/Banner.png"
+feature_image: "media/blog/Laragon/error-1115/Banner.png"
+# title: "media/blog/Laragon/error-1115/Banner.png"
 ---
 
 <!-- image: 'media/about-me/foto.jpg' -->
@@ -28,7 +29,7 @@ Este mensaje se debe a incompatibilidades de versiones de MYSQL, en un lenguaje
 mas sencillo es que la versión que utilizamos en local es superior a la que
 disponemos en el hosting, servidor, etc. (en mi caso en otra máquina local).
 
-## Solución Visual Studio Code
+## Solución con Visual Studio Code
 
 Para solucionar esto, lo que vamos a hacer, es abrir el fichero **.sql** con un
 editor de textos plano, en mi caso uso visual studio code, y usaremos la
@@ -39,7 +40,7 @@ reemplazar por utf8.
 
 ![visual-studio-code](media/blog/Laragon/error-1115/visual-studio-code.png)
 
-## Solución Laragon
+## Solución con Laragon
 
 Como estoy utilizando Laragon, este trae integrado como administrador de base de
 datos [download](https://www.heidisql.com/download.php)

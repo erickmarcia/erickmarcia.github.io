@@ -10,7 +10,7 @@ secondary_tag: "Apps"
 brief: "En este artículo vamos a conocer como poder conectar nuestro dispositivo
   movil, para probar como emulador de nuestras Apps"
 keywords: "formik,español,react,cómo,validar formularios react,binaria,blog"
-image: "media/blog/Xamarin/How-to-Debug-Xamarin-Application-on-Visual-Studio-660x420.png"
+feature_image: "media/blog/Xamarin/How-to-Debug-Xamarin-Application-on-Visual-Studio-660x420.png"
 ---
 
 <!-- ![Post Xamarin](media\blog\Xamarin\Debug\How-to-Debug-Xamarin-Application-on-Visual-Studio-660x420.png) -->

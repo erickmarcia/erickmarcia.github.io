@@ -3,8 +3,8 @@
 // const contents = JSON.stringify(posts.map(post => {
 //   return {
 //     title: post.title,
+//     feature_image: post.feature_image,
 //     slug: post.slug,
-//     image: post.image,
 //     excerpt: post.excerpt,
 //     printDate: post.printDate,
 //   };

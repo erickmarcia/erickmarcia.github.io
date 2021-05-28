@@ -18,6 +18,7 @@
   }
 </style>
 
+<hr />
 <div>
   <img src="/media/about-me/profile.png" alt="Erick Marcia">
   <p>
@@ -28,3 +29,4 @@
     o leer más sobre mí en <a href="https://erickmarcia.github.io/" target="_blank">my website</a>.
   </p>
 </div>
+<hr />

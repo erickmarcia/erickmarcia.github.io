@@ -8,7 +8,7 @@ primary_tag: "Xamarin"
 secondary_tag: "Apps"
 brief: "En este artículo vamos a conocer que es Xamarin y la diferencia entre Xamarin Forms y Xamarin MAUI"
 keywords: "formik,español,react,cómo,validar formularios react,binaria,blog"
-image: "media/blog/Xamarin/MAUI/XAMARIN.png"
+feature_image: "media/blog/Xamarin/MAUI/XAMARIN.png"
 ---
 
 ![Post Xamarin](media/blog/Xamarin/MAUI/Xamarin-MAUI.png)
