@@ -50,8 +50,8 @@
   <footer>
     <span>
       &copy; {new Date().getFullYear()} Sitio en construcción.
-      Powered by <a href="https://sapper.svelte.dev" target="_blank">Sapper</a>.
-      Template by <a href="https://www.twitter.com/Emarcia14" target="_blank">Erick Marcia</a>.
+      Web Diseñada por <a href="https://www.twitter.com/Emarcia14" target="_blank">Erick Marcia</a>.
+      usando<a href="https://sapper.svelte.dev" target="_blank">Sapper</a>.
     </span>
   </footer>
 </div>

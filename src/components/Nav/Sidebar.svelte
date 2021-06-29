@@ -13,6 +13,13 @@
 </script>
 
 <style>
+  .sidebar {
+    display: block;
+    border-radius: 4px;
+    padding: 15px;
+    box-sizing: border-box;
+  }
+
   .Sidebar-container {
     display: block;
     border-radius: 4px;
@@ -50,6 +57,33 @@
   }
 </style>
 
+<!-- <div class="sidebar">
+  <div class="sidebar">
+    <div class="sidebar__container" class:sticky={isStickySidebar}>
+      {#if showTemary}
+      <div class="sidebar__temary-container">
+        <h3 class="sidebar__title">Temario</h3>
+        <ul class="sidebar__temary-list">
+          {#each temary as element}
+          <li class="sidebar__temary-item" class:active={element.isActive} on:click={()=>
+            onTemaryClick(element.innerText)}>
+            <p class="sidebar__temary-item-text">{element.innerText}</p>
+          </li>
+          {/each}
+        </ul>
+      </div>
+      {/if}
+      <div class="post-container">
+        <h3 class="sidebar__title">Otras publicaciones</h3>
+        {#each recommendedPosts as post}
+        <Post {post} />
+        {/each}
+      </div>
+    </div>
+  </div>
+</div> -->
+
+
 <div class="Sidebar-container">
   <div class="Sidebar" class:sticky={isStickySidebar}>
     {#if showTemary}
@@ -58,7 +92,6 @@
       <ul class="Temary-list">
         {#each temary as element}
         <li class:active={element.isActive} on:click={()=> onTemaryClick(element.innerText)}>
-          <!-- <span class="Temary-list-icon"><ChevronRightIcon class="Temary-list-icon" size="1.5x"/></span> -->
           <p>{element.innerText}</p>
         </li>
         {/each}
@@ -71,5 +104,9 @@
       <Post {post} />
       {/each}
     </div>
+  </div>
+  <div>
+    <iframe src='https://ko-fi.com/erickmarcia/?hidefeed=true&widget=true&embed=true&preview=true'
+      style='border:none;width:100%;padding:4px;background:#f9f9f9;' height='712' title='erickmarcia'></iframe>
   </div>
 </div>

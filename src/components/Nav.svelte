@@ -55,5 +55,8 @@
   <a class='{segment === undefined ? "selected" : ""}' href='.'>home</a>
   <a class='{segment === "about" ? "selected" : ""}' href='about'>about</a>
   <a rel=prefetch class='{segment === "blog" ? "selected" : ""}' href='blog'>blog</a>
-  <a rel=prefetch class='{segment === "logros" ? "selected" : ""}' href='logros'>logros</a>
+  <a rel=prefetch class='{segment === "work-experience" ? "selected" : ""}' href='work-experience'>Experiencia
+    profesional </a>
+  <!-- <a rel=prefetch class='{segment === "skill" ? "selected" : ""}' href='skill'>skill</a> -->
+  <!-- <a rel=prefetch class='{segment === "contact" ? "selected" : ""}' href='contact'>contacto</a> -->
 </nav>
