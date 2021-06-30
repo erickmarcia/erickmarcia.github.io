@@ -285,16 +285,7 @@ La primera acción que vamos a crear es la de **Consultar** donde ocuparemos el
 método **GET**, para ello agregaremos el siguiente código que realizara la
 consulta de todos los registros de la tabla.
 
-```C#
-[HttpGet]
-        public IEnumerable<Articulo> Get()
-        {
-            using (POSEntities db = new POSEntities())
-            {
-                return db.Articulo.ToList();
-            }
-        }
-```
+![apiGet](media/blog/CSharp/ASP-NET/RESTAPI/apiGet.png)
 
 > Nota: El nombre de la tabla Articulo que se ocupa en
 > **`IEnumerable<Articulo>`** la podemos obtener consultando la referencia de
@@ -303,16 +294,7 @@ consulta de todos los registros de la tabla.
 Para retornar los valores filtrados por id deberiamos agregar el siguiente
 código.
 
-```C#
-   [HttpGet]
-        public Articulo Get(int id)
-        {
-            using (POSEntities db = new POSEntities())
-            {
-                return db.Articulo.FirstOrDefault(x => x.idArticulo == id);
-            }
-        }
-```
+![apiGetid](media/blog/CSharp/ASP-NET/RESTAPI/apiGetid.png)
 
 Tu código debería quedar de la siguiente forma.
 
@@ -321,22 +303,7 @@ Tu código debería quedar de la siguiente forma.
 La siguiente acción a realizar es para **Crear** un nuevo registro, en este caso
 vamos utilizar el método **POST**.
 
-```C#
-    [HttpPost]
-        public IHttpActionResult AgregarArticulo([FromBody]Articulo articulo)
-        {
-            if(ModelState.IsValid)
-            {
-                Context.Articulo.Add(articulo);
-                Context.SaveChanges();
-                return Ok(articulo);
-            }
-            else
-            {
-                return BadRequest();
-            }
-        }
-```
+![apiPost](media/blog/CSharp/ASP-NET/RESTAPI/apiPost.png)
 
 Tu código debería quedar de la siguiente forma.
 
@@ -345,31 +312,7 @@ Tu código debería quedar de la siguiente forma.
 La siguiente acción a realizar nos permitira **Actualizar** nuestros registros,
 en este caso vamos utilizar el método **PUT**.
 
-```C#
-     [HttpPut]
-        public IHttpActionResult ActualizarArticulo(int id, [FromBody] Articulo articulo)
-        {
-            if (ModelState.IsValid)
-            {
-                var articuloExiste = Context.Articulo.Count(e => e.idArticulo == id) > 0;
-                if (articuloExiste)
-                {
-                    Context.Entry(articulo).State = EntityState.Modified;
-                    Context.SaveChanges();
-
-                    return Ok(articulo);
-                }
-                else
-                {
-                    return NotFound();
-                }
-            }
-            else
-            {
-                return BadRequest();
-            }
-        }
-```
+![apiPut](media/blog/CSharp/ASP-NET/RESTAPI/apiPut.png)
 
 > Nota: En caso de que te salga un error asegurate de tener agregada la
 > referencia **System.Data.Entity**.
@@ -381,25 +324,7 @@ Tu código debería quedar de la siguiente forma.
 La siguiente acción a realizar nos permitira **Eliminar** nuestros registros, en
 este caso vamos utilizar el método **Delete**.
 
-```C#
-  [HttpDelete]
-        public IHttpActionResult EliminarArticulo(int id)
-        {
-            var articulo = Context.Articulo.Find(id);
-
-            if (articulo != null)
-            {
-                Context.Articulo.Remove(articulo);
-                Context.SaveChanges();
-
-                return Ok(articulo);
-            }
-            else
-            {
-                return NotFound();
-            }
-        }
-```
+![apiDelete](media/blog/CSharp/ASP-NET/RESTAPI/apiDelete.png)
 
 Tu código debería quedar de la siguiente forma.
 
@@ -436,15 +361,7 @@ principal WebAPI.
 Teclearemos el siguiente código que realizar la salida en formato Json y remueve
 la salida en formato XML.
 
-```C#
-var json = config.Formatters.JsonFormatter;
-
-json.SerializerSettings.PreserveReferencesHandling =
-Newtonsoft.Json.PreserveReferencesHandling.Objects;
-
-            config.Formatters.Remove(config.Formatters.XmlFormatter);
-
-```
+![formatJson](media/blog/CSharp/ASP-NET/RESTAPI/formatJson.png)
 
 Tu código debería quedar de la siguiente forma.
 
@@ -568,5 +485,8 @@ Si te gustaria ver como publicar este proyecto en un servidor IISS o como
 podemos consumir nuestra API-REST desde un proyecto FrontEnd o algún otro tema
 que te gustaria ver dejame tu comentario con gusto lo leere y sacare un tiempo
 para responderte y escribirlo.
+
+Puedes descargar el proyecto desde mi repositorio en
+[GitHub](https://github.com/erickmarcia/ASP.NET.git)
 
 ¡Listo para crear tu primera API-REST!
