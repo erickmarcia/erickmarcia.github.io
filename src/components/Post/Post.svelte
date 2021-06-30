@@ -101,9 +101,9 @@
           &nbsp;&nbsp;{(post.primary_tag || {}).name}
         </span>
         <p>
-          <time datetime={post.date}>
+          <time datetime={post.published_at}>
             <CalendarIcon size="20" />
-            &nbsp;&nbsp;{timeFormatter(post.date)}
+            &nbsp;&nbsp;{timeFormatter(post.published_at)}
           </time>
           <span>
             <BookOpenIcon size="20" />
