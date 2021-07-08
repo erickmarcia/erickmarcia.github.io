@@ -487,6 +487,6 @@ que te gustaria ver dejame tu comentario con gusto lo leere y sacare un tiempo
 para responderte y escribirlo.
 
 Puedes descargar el proyecto desde mi repositorio en
-[GitHub](https://github.com/erickmarcia/ASP.NET.git)
+[GitHub](https://github.com/erickmarcia/CSHARP/tree/main/APIREST/WebApi)
 
 ¡Listo para crear tu primera API-REST!

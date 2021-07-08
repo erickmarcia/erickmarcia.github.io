@@ -1,7 +1,7 @@
 ---
 author: 'Erick Marcia'
 slug: 'C-y-Devexpress'
-title: 'C# y Devexpress!'
+title: 'C# con Devexpress!'
 layout: post
 date: '2018-12-12T07:08:02.000-07:00'
 primary_tag: 'Devexpress'
@@ -48,12 +48,12 @@ Como consecuencia de la iniciativa Fluent Design de Microsoft , muchos
 desarrolladores de aplicaciones modernas como la de la imagen hacen tres
 elecciones importantes para sus implementaciones de UI:
 
-- Implementan un diseño adaptable, por lo que las ventanas de la aplicación se
-  ven bien en diferentes tamaños de pantalla
-- Muestran una barra de navegación que utiliza Acrílico y el efecto Revelar
-  resaltado
-- Utilizan un menú de hamburguesas, que desempeña un papel importante para los
-  escenarios de diseño adapta
+-   Implementan un diseño adaptable, por lo que las ventanas de la aplicación se
+    ven bien en diferentes tamaños de pantalla.
+-   Muestran una barra de navegación que utiliza Acrílico y el efecto Revelar
+    resaltado.
+-   Utilizan un menú de hamburguesas, que desempeña un papel importante para los
+    escenarios de diseño adapta.
 
 ## Diseño fluido para WinForms
 
@@ -62,19 +62,19 @@ control de formulario llamado FluentDesignForm. Como reemplazo del estándar
 Form, esto es similar XtraForm, RibbonFormy, TabbedForm, pero también es muy
 diferente porque combina varios elementos conectados:
 
-- Un control de acordeón para la navegación, con un nuevo estilo de menú de
-  hamburguesa aplicado.
+-   Un control de acordeón para la navegación, con un nuevo estilo de menú de
+    hamburguesa aplicado.
 
 ![Menu Hamburguesa](media/blog/Devexpress/Acordeon/Menu.png)
 
-- Fluent Design Form Control toma el control del área de encabezado del
-  formulario y le permite agregar botones, editores y etiquetas en su
-  superficie.
+-   Fluent Design Form Control toma el control del área de encabezado del
+    formulario y le permite agregar botones, editores y etiquetas en su
+    superficie.
 
 ![Diseño fluido](media/blog/Devexpress/Acordeon/elements.png)
 
-- El contenedor de formularios de diseño fluido contiene el contenido del
-  formulario.
+-   El contenedor de formularios de diseño fluido contiene el contenido del
+    formulario.
 
 ## Transparencia parcial
 
