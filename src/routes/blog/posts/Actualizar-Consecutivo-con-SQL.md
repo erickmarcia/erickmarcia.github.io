@@ -14,6 +14,10 @@ keywords: 'SQL,blog'
 feature_image: 'media/blog/SQL/Consecutivo/Banner.jpg'
 ---
 
+<figcaption>Ilustración Gracias a <a href='https://www.freepik.es/vectores/red'>Vector de Red creado por freepik - www.freepik.es</a></figcaption>
+
+## Introducción
+
 Uno de los problemas que comunmente nos encontramos es el trabajar con
 consecutivos y más cuando estos estan estructurados con caracteres y números, ya
 que se dificulta el poder aumentarlos.
@@ -27,12 +31,12 @@ una funcion que nos permita actualizarlos.
 Para este ejemplo necesitaremos una tabla donde guardaremos los consecutivo a
 utilizar en nuestro sistema con los siguientes campos:
 
-![ERROR #1115](media/blog/SQL/Consecutivo/1-Consecutivo.png)
+![Consecutivo1](media/blog/SQL/Consecutivo/1-Consecutivo.png)
 
 Una vez que tenemos la tabla con los datos a ocupar, podemos buscar el campo con
 el consecutivo a aumentar en este caso el campo [ultimoValor]:
 
-![ERROR #1115](media/blog/SQL/Consecutivo/2-Consecutivo.png)
+![Consecutivo2](media/blog/SQL/Consecutivo/2-Consecutivo.png)
 
 ## Creando Función Rellenar con Ceros
 
@@ -43,7 +47,7 @@ llamaremos [fncRellenarConCeros], esta función recibira 2 parametros:
 1. [@numero] = Consecutivo
 2. [@longitudRequerida] = Longitud del consecutivo .
 
-![ERROR #1115](media/blog/SQL/Consecutivo/3-Consecutivo.png)
+![Consecutivo3](media/blog/SQL/Consecutivo/3-Consecutivo.png)
 
 > Nota: Si no deseas crear la función [fncRellenarConCeros], puedes utilizarla
 > script que se útiliza dentro de la función [fncDameNuevoConsecutivo] para
@@ -64,67 +68,50 @@ siguientes pasos:
 
 1. Declaramos las variables a ocupar
 
-```
-    DECLARE @nuevo_consecutivo NVARCHAR(MAX);
-    DECLARE @consecutivo_global NVARCHAR(MAX);
-    DECLARE @consecutivo INT;
-
-```
+![Consecutivo4.1](media/blog/SQL/Consecutivo/4.1-Consecutivo.png)
 
 2. Obtenemos el último valor o consecutivo guardado y lo asignamos a nuestra
    variable consecutivo_global.
 
-```
-   	SET @consecutivo_global = (SELECT [C].[ULTIMOVALOR] FROM [Base].[CONSECUTIVO] AS [C] WHERE [C].[CODIGO]  IN (@CODIGO))
-
-```
+![Consecutivo4.2](media/blog/SQL/Consecutivo/4.2-Consecutivo.png)
 
 3. Separamos nuestro consecutivo, para ello vamos a seleccionar el parte que se
    desea incrementar que debe de ser número, en mi caso de derecha a izquierda 3
    digitos, le sumamos 1 y lo asignamos a la variable consecutivo.
 
-```
-   	SET @consecutivo = RIGHT(@consecutivo_global,3) + 1
-
-```
+![Consecutivo4.3](media/blog/SQL/Consecutivo/4.3-Consecutivo.png)
 
 4. Por último obtenemos la parte del consecutivo que no varia en mi caso de
    izquierda a derecha los primeros 9 caracteres con la función LEFT de SQL, lo
    concatenamos con el resultado obtenido al ejecutar la función antes creada
    [fncRellenarConCeros] y lo asignamos a la variable nuevo_consecutivo.
 
-```
-  SELECT @nuevo_consecutivo = LEFT(@consecutivo_global,9) + [dbo].[fncRellenarConCeros](@consecutivo, 3)
-
-```
+![Consecutivo4.4](media/blog/SQL/Consecutivo/4.4-Consecutivo.png)
 
 5. para terminar nuestra función retornamos la variable nuevo_consecutivo.
 
-```
-     RETURN @nuevo_consecutivo;
-
-```
+![Consecutivo4.5](media/blog/SQL/Consecutivo/4.5-Consecutivo.png)
 
 El resultado final será de nuestra función es el siguiente:
 
-![ERROR #1115](media/blog/SQL/Consecutivo/4-Consecutivo.png)
+![Consecutivo4](media/blog/SQL/Consecutivo/4-Consecutivo.png)
 
-## Probando Función
+## Probando Actualización de Consecutivos
 
 A continuación procederemos a ejeccutar la función
 [dbo].[fncDameNuevoConsecutivo] dentro de un SELECT quedando de la siguiente
 manera:
 
-![ERROR #1115](media/blog/SQL/Consecutivo/5-Consecutivo.png)
+![Consecutivo5](media/blog/SQL/Consecutivo/5-Consecutivo.png)
 
-## Revisando Función
+## Revisando Ubicación Funciones Creadas
 
 Si deseas ver donde se encuentran las funciones que creamos.
 
 Selecciona la base de datos -> Procedimientos -> Funciones -> Funciones
 Escalares
 
-![ERROR #1115](media/blog/SQL/Consecutivo/6-Consecutivo.png)
+![Consecutivo6](media/blog/SQL/Consecutivo/6-Consecutivo.png)
 
 ## Conclusiones
 

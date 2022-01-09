@@ -11,10 +11,10 @@ es por ello que en este artículo estaremos abordando el tema de **Fluent Design
 Form and Acrylic effects** una de las nuevas capacidades diseñadas para replicar
 la metáfora de la próxima generación de IU de Microsoft'
 keywords: 'formik,español,Devexpress,cómo,crear formularios devexpress,C# y DevExpress,blog'
-feature_image: 'media/blog/Devexpress/Acordeon/banner.png'
+feature_image: 'media/blog/DevExpress/Acordeon/banner.png'
 ---
 
-<!-- ![Acordeon](media/blog/Devexpress/Acordeon/banner.png) -->
+<!-- ![Acordeon](media/blog/DevExpress/Acordeon/banner.png) -->
 
 > Este artículo hace parte de una iniciativa genial: el primer calendario de
 > adviento de C# español. Cada día, durante 9 días, dos artículos nuevos sobre
@@ -43,7 +43,7 @@ introduciendo Acrylic, que se explica
 Para ilustrar, esta imagen muestra un formulario con un control de acordeón
 parcialmente transparente:
 
-![WinForms Fluent Design and Acrylic Effects](media/blog/Devexpress/Acordeon/winforms-fluent-form.png)
+![WinForms Fluent Design and Acrylic Effects](media/blog/DevExpress/Acordeon/winforms-fluent-form.png)
 Como consecuencia de la iniciativa Fluent Design de Microsoft , muchos
 desarrolladores de aplicaciones modernas como la de la imagen hacen tres
 elecciones importantes para sus implementaciones de UI:
@@ -65,13 +65,13 @@ diferente porque combina varios elementos conectados:
 -   Un control de acordeón para la navegación, con un nuevo estilo de menú de
     hamburguesa aplicado.
 
-![Menu Hamburguesa](media/blog/Devexpress/Acordeon/Menu.png)
+![Menu Hamburguesa](media/blog/DevExpress/Acordeon/Menu.png)
 
 -   Fluent Design Form Control toma el control del área de encabezado del
     formulario y le permite agregar botones, editores y etiquetas en su
     superficie.
 
-![Diseño fluido](media/blog/Devexpress/Acordeon/elements.png)
+![Diseño fluido](media/blog/DevExpress/Acordeon/elements.png)
 
 -   El contenedor de formularios de diseño fluido contiene el contenido del
     formulario.
@@ -83,7 +83,7 @@ efecto Acrílico para el Control de Acordeón. Al mismo tiempo, el efecto Revela
 resaltado también se activa, imitando una fuente de luz suave que se mueve junto
 con el puntero del mouse.
 
-![Transparencia parcial](media/blog/Devexpress/Acordeon/transparencia.gif)
+![Transparencia parcial](media/blog/DevExpress/Acordeon/transparencia.gif)
 
 > Notas: Tenga en cuenta que ambos efectos están habilitados en Windows 10
 > versión 1803 (compilación de SO 17134), que se requiere para ver estos efectos
@@ -99,7 +99,7 @@ utilizando dos valores de umbral para su ancho. Cuando un usuario cambia el
 tamaño del formulario, el Control de acordeón cambia automáticamente su
 DisplayModedependiendo del ancho.
 
-![Diseño adaptativo](media/blog/Devexpress/Acordeon/resize.gif)
+![Diseño adaptativo](media/blog/DevExpress/Acordeon/resize.gif)
 
 ## Integración de acordeón
 
@@ -108,7 +108,7 @@ modos: un modo "tradicional" donde el encabezado del formulario es el elemento
 más alto, y un modo de "tamaño completo" donde el Acordeón se extiende hasta la
 parte superior del Formulario.
 
-![Acordeon](media/blog/Devexpress/Acordeon/acordeon.png)
+![Acordeon](media/blog/DevExpress/Acordeon/acordeon.png)
 
 > Notas: Tenga en cuenta que el modo de tamaño completo funciona mejor con las
 > máscaras planas modernas, por lo que actualmente requiere The Bezier o una de
@@ -126,7 +126,7 @@ HTML5 / JavaScript.
 
 Y tú, ¿Considerarías usarlos en tu próxima aplicación?
 
-![Acordeon](media/blog/Devexpress/Acordeon/images.jpg)
+![Acordeon](media/blog/DevExpress/Acordeon/images.jpg)
 
 ## Agradecimimento
 
